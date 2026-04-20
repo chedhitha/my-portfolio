@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chedhitha Chowdary Kothapalli – Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: #f4f4f0;
+    color: #1a1a1a;
+    min-height: 100vh;
+    padding: 2rem 1rem;
+  }
+  .port {
+    max-width: 720px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .hero {
+    background: linear-gradient(135deg, #0F6E56 0%, #1D9E75 60%, #5DCAA5 100%);
+    border-radius: 16px;
+    padding: 2.5rem 2.2rem 2rem;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    right: -40px; top: -40px;
+    width: 220px; height: 220px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.07);
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    right: 20px; bottom: -70px;
+    width: 160px; height: 160px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.05);
+  }
+  .hero-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.1rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    margin-bottom: 4px;
+    position: relative;
+  }
+  .hero-title {
+    font-size: 13px;
+    font-weight: 300;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    opacity: 0.85;
+    margin-bottom: 1.2rem;
+    position: relative;
+  }
+  .hero-summary {
+    font-size: 14px;
+    line-height: 1.7;
+    opacity: 0.92;
+    max-width: 500px;
+    margin-bottom: 1.5rem;
+    position: relative;
+  }
+  .contact-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    position: relative;
+  }
+  .ctag {
+    background: rgba(255,255,255,0.15);
+    border: 0.5px solid rgba(255,255,255,0.3);
+    border-radius: 20px;
+    padding: 5px 14px;
+    font-size: 12px;
+    color: #fff;
+    text-decoration: none;
+  }
+  .ctag:hover { background: rgba(255,255,255,0.25); }
+  .section { }
+  .sec-label {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #888;
+    margin-bottom: 10px;
+    padding-left: 2px;
+  }
+  .cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .card {
+    background: #fff;
+    border: 0.5px solid #e0e0da;
+    border-radius: 14px;
+    padding: 1rem 1.15rem;
+  }
+  .card-full { grid-column: 1 / -1; }
+  .card-title {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 5px;
+  }
+  .card-sub {
+    font-size: 13px;
+    color: #666;
+    line-height: 1.65;
+  }
+  .badge {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 500;
+    padding: 3px 10px;
+    border-radius: 12px;
+    margin: 3px 3px 0 0;
+  }
+  .b-teal  { background: #E1F5EE; color: #0F6E56; }
+  .b-blue  { background: #E6F1FB; color: #185FA5; }
+  .b-amber { background: #FAEEDA; color: #854F0B; }
+  .b-green { background: #EAF3DE; color: #3B6D11; }
+  .b-purple{ background: #EEEDFE; color: #534AB7; }
+  .cgpa-pill {
+    background: #E1F5EE;
+    color: #0F6E56;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 3px 10px;
+    border-radius: 12px;
+  }
+  .proj-bar {
+    width: 100%;
+    height: 3px;
+    background: #E1F5EE;
+    border-radius: 2px;
+    margin-top: 10px;
+  }
+  .proj-fill {
+    height: 3px;
+    background: linear-gradient(90deg, #1D9E75, #5DCAA5);
+    border-radius: 2px;
+  }
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+  .skill-card {
+    background: #f7f7f3;
+    border-radius: 10px;
+    padding: 10px 8px;
+    text-align: center;
+  }
+  .skill-name { font-size: 12px; font-weight: 500; margin-top: 5px; }
+  .skill-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    margin: 0 auto 4px;
+  }
+  .d-teal  { background: #1D9E75; }
+  .d-blue  { background: #378ADD; }
+  .d-amber { background: #EF9F27; }
+  .certs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+  .cert-item {
+    background: #f7f7f3;
+    border-radius: 10px;
+    padding: 9px 12px;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .cert-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: #1D9E75;
+    flex-shrink: 0;
+  }
+  .edu-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4px;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+  .edu-name { font-size: 14px; font-weight: 500; }
+  .edu-meta { font-size: 12px; color: #888; margin-bottom: 2px; }
+  .divider {
+    height: 0.5px;
+    background: #e8e8e2;
+    margin: 10px 0;
+  }
+  .icon { font-size: 16px; margin-bottom: 8px; display: block; }
+  footer {
+    text-align: center;
+    font-size: 12px;
+    color: #aaa;
+    padding: 1rem 0 0.5rem;
+  }
+
+  @media (max-width: 560px) {
+    .cards { grid-template-columns: 1fr; }
+    .card-full { grid-column: 1; }
+    .skills-grid { grid-template-columns: repeat(2, 1fr); }
+    .certs { grid-template-columns: 1fr; }
+    .hero-name { font-size: 1.6rem; }
+  }
+</style>
+</head>
+<body>
+<div class="port">
+
+  <!-- Hero -->
+  <div class="hero">
+    <div class="hero-name">Chedhitha Chowdary Kothapalli</div>
+    <div class="hero-title">Frontend Developer &amp; Data Analyst</div>
+    <div class="hero-summary">
+      B.Tech Computer Science (Data Science) student at Mohan Babu University, Tirupati.
+      Proficient in building responsive UIs and creating insightful data dashboards.
+    </div>
+    <div class="contact-row">
+      <a class="ctag" href="mailto:chedhitha2006@gmail.com">chedhitha2006@gmail.com</a>
+      <a class="ctag" href="tel:9989585590">9989585590</a>
+      <span class="ctag">Tirupati, Andhra Pradesh</span>
+      <a class="ctag" href="https://linkedin.com" target="_blank">LinkedIn</a>
+      <a class="ctag" href="https://github.com" target="_blank">GitHub</a>
+    </div>
+  </div>
+
+  <!-- Internships -->
+  <div class="section">
+    <div class="sec-label">Internships &amp; Training</div>
+    <div class="cards">
+      <div class="card">
+        <span class="icon">💼</span>
+        <div class="card-title">IBM – Frontend Developer Intern</div>
+        <div class="card-sub">Developed responsive web pages and interactive UI components using HTML, CSS, and JavaScript.</div>
+      </div>
+      <div class="card">
+        <span class="icon">🤖</span>
+        <div class="card-title">Amazon ML Summer School 2025</div>
+        <div class="card-sub">Hands-on training in machine learning algorithms, model building, and evaluation techniques.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Projects -->
+  <div class="section">
+    <div class="sec-label">Projects</div>
+    <div class="cards">
+      <div class="card">
+        <div class="card-title">Festival Web App</div>
+        <div class="card-sub">Responsive festival-based web app with dynamic UI and enhanced navigation. Improved user interaction by ~30%.</div>
+        <div class="proj-bar"><div class="proj-fill" style="width:78%"></div></div>
+        <div style="margin-top:8px">
+          <span class="badge b-teal">HTML5</span>
+          <span class="badge b-teal">CSS3</span>
+          <span class="badge b-teal">JavaScript</span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-title">Crypto Transaction DB</div>
+        <div class="card-sub">Relational database with 10+ normalized tables ensuring data integrity and accurate transaction tracking.</div>
+        <div class="proj-bar"><div class="proj-fill" style="width:65%"></div></div>
+        <div style="margin-top:8px">
+          <span class="badge b-blue">SQL</span>
+          <span class="badge b-blue">DBMS</span>
+        </div>
+      </div>
+      <div class="card card-full">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+          <div class="card-title">Personal Finance Analytics Dashboard</div>
+          <span class="badge b-amber">In Progress</span>
+        </div>
+        <div class="card-sub">Interactive Power BI dashboard for analyzing income, expenses, and savings with KPI visualizations and category-wise insights.</div>
+        <div style="margin-top:8px">
+          <span class="badge b-amber">Power BI</span>
+          <span class="badge b-amber">MS Excel</span>
+          <span class="badge b-amber">Data Analytics</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Education + Skills -->
+  <div class="section">
+    <div class="cards">
+      <div class="card">
+        <div class="sec-label">Education</div>
+        <div class="edu-row">
+          <span class="edu-name">B.Tech CS (Data Science)</span>
+          <span class="cgpa-pill">9.5 CGPA</span>
+        </div>
+        <div class="edu-meta">Mohan Babu University &middot; 2023–2027</div>
+        <div class="divider"></div>
+        <div class="edu-row">
+          <span class="edu-name">Intermediate (MPC)</span>
+          <span class="badge b-green">98%</span>
+        </div>
+        <div class="edu-meta">Narayana Junior College &middot; 2021–2023</div>
+        <div class="divider"></div>
+        <div class="edu-row">
+          <span class="edu-name">SSC</span>
+          <span class="badge b-green">100%</span>
+        </div>
+        <div class="edu-meta">Red Cherries School &middot; 2021</div>
+      </div>
+      <div class="card">
+        <div class="sec-label">Technical Skills</div>
+        <div class="skills-grid">
+          <div class="skill-card"><div class="skill-dot d-teal"></div><div class="skill-name">HTML5/CSS3</div></div>
+          <div class="skill-card"><div class="skill-dot d-teal"></div><div class="skill-name">JavaScript</div></div>
+          <div class="skill-card"><div class="skill-dot d-blue"></div><div class="skill-name">SQL</div></div>
+          <div class="skill-card"><div class="skill-dot d-amber"></div><div class="skill-name">Power BI</div></div>
+          <div class="skill-card"><div class="skill-dot d-amber"></div><div class="skill-name">MS Excel</div></div>
+          <div class="skill-card"><div class="skill-dot d-blue"></div><div class="skill-name">Python</div></div>
+          <div class="skill-card"><div class="skill-dot d-teal"></div><div class="skill-name">Java DSA</div></div>
+          <div class="skill-card"><div class="skill-dot d-blue"></div><div class="skill-name">Git/GitHub</div></div>
+          <div class="skill-card"><div class="skill-dot d-amber"></div><div class="skill-name">Problem Solving</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Certifications -->
+  <div class="section">
+    <div class="sec-label">Certifications</div>
+    <div class="certs">
+      <div class="cert-item"><div class="cert-dot"></div>Data Visualization – Tata</div>
+      <div class="cert-item"><div class="cert-dot"></div>Intro to Data Science – Cisco</div>
+      <div class="cert-item"><div class="cert-dot"></div>Data Analytics – Accenture</div>
+      <div class="cert-item"><div class="cert-dot"></div>Business Analytics – LinkedIn</div>
+      <div class="cert-item"><div class="cert-dot"></div>IT Primer – TCS iON</div>
+      <div class="cert-item"><div class="cert-dot" style="background:#378ADD"></div>STEP English – 8.5 / 10</div>
+    </div>
+  </div>
+
+  <footer>© 2025 Chedhitha Chowdary Kothapalli &nbsp;·&nbsp; Tirupati, Andhra Pradesh</footer>
+
+</div>
+</body>
+</html>
